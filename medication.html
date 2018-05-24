@@ -18,7 +18,8 @@ xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 
 	<script type="text/javascript">
 		function botaoClicado() {
-			$("#animais-selecionados").append("<div>" + $("#autocomplete-input").value + "</div>")
+			console.log('ayyyy');
+			document.getElementById('animaisSelecionados').insertAdjacentHTML('beforebegin', "<div><p> {{ Animal.Nome }} </p></div>")
 		}
 	</script>
 
@@ -57,7 +58,11 @@ xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 				Data: <input type="date" name="validade" />
 				<div class="input-field col s12">
 					<div id="animais-selecionados">
-						Animais  <input type="text" id="autocomplete-input" class="autocomplete"> <a class="btn waves-effect waves-light teal darken-3" onclick="botaoClicado()" >Enviar <i class="material-icons right">send</i></a>
+						Animais  <input type="text" id="autocomplete-input" class="autocomplete" name="animals">
+						<div id="animaisSelecionados">
+						</div>
+						<a class="btn waves-effect waves-light teal darken-3" onclick="botaoClicado()" >Enviar <i class="material-icons right">send</i>
+						</a>
 					</div>
         		</div>
 				<div class="right-align">
