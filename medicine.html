@@ -1,77 +1,76 @@
 <!DOCTYPE html>
-<html xmlns:th="http://thymeleaf.org"
-xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
-<head>
+<html>
+	<head>
 
-	<title>Sisboi - Medicine</title>
+		<title>Sisboi - Medicine</title>
 
-	<meta charset="UTF-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-	<!--Import Google Icon Font-->
-	<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+		<!--Import Google Icon Font-->
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
 	rel="stylesheet" />
 
-	<!--Import materialize.css-->
-	<link rel="stylesheet"
+		<!--Import materialize.css-->
+		<link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css" />
 
-</head>
+	</head>
 
-<body>
+	<body>
 
-	<header>
+		<header>
 
-		<nav class="teal darken-4">
-			<div class="nav-wrapper">
-				<a href="index.html" class="brand-logo">Sisboi</a> <a href="index.html"
-				data-activates="mobile-demo" class="button-collapse"><i
-				class="material-icons">menu</i></a>
-				<ul class="right hide-on-med-and-down">
-					<li><a href="animal.html">Animal</a></li>
-					<li><a href="medicine.html">Medicine</a></li>
-					<li><a href="medication.html">Medication</a></li>
-					<li><a href="login.html">Sair</a></li>
-				</ul>
-				<ul class="side-nav" id="mobile-demo">
-					<li><a href="animal.html">Animal</a></li>
-					<li><a href="medicine.html">Medicine</a></li>
-					<li><a href="medication.html">Medication</a></li>
-					<li><a href="login.html">Logout</a></li>
-				</ul>
-			</div>
-		</nav>
-
-	</header>
-
-	<div class="row">
-		<div class="container">
-			<div class="card-panel">
-				<form method="post">
-					<div class="row">
-						<div class="input-field col s3">
-							Nome: <input type="text" name="id" />
-						</div>
-						<div class="input-field col s3">
-							Validade: <input type="date" name="date" />
-						</div>
-						<div class="input-field col s3">
-							Descrição: <input type="text" name="weight" />
-						</div>
-						<div class="input-field col s3">
-							Tipo: <input type="text" name="type" />
-						</div>
-					</div>
-					<div class="right-align">
-						<button class="btn waves-effect waves-light teal darken-3"
-						type="submit" name="action">
-						Salvar <i class="material-icons right">save</i>
-					</button>
+			<nav class="teal darken-4">
+				<div class="nav-wrapper">
+					<a href="index.html" class="brand-logo">Sisboi</a> <a href="index.html"
+							   data-activates="mobile-demo" class="button-collapse"><i
+				       class="material-icons">menu</i></a>
+					<ul class="right hide-on-med-and-down">
+						<li><a href="animal.html">Animal</a></li>
+						<li><a href="medicine.html">Medicine</a></li>
+						<li><a href="medication.html">Medication</a></li>
+						<li><a href="login.html">Sair</a></li>
+					</ul>
+					<ul class="side-nav" id="mobile-demo">
+						<li><a href="animal.html">Animal</a></li>
+						<li><a href="medicine.html">Medicine</a></li>
+						<li><a href="medication.html">Medication</a></li>
+						<li><a href="login.html">Logout</a></li>
+					</ul>
 				</div>
-			</form>
-		</div>
-	</div>
-	<div class="row container">
+			</nav>
+
+		</header>
+
+		<div class="row">
+			<div class="container">
+				<div class="card-panel">
+					<form method="post">
+						<div class="row">
+							<div class="input-field col s3">
+								Nome: <input type="text" name="id" />
+							</div>
+							<div class="input-field col s3">
+								Validade: <input type="date" name="date" />
+							</div>
+							<div class="input-field col s3">
+								Descrição: <input type="text" name="weight" />
+							</div>
+							<div class="input-field col s3">
+								Tipo: <input type="text" name="type" />
+							</div>
+						</div>
+						<div class="right-align">
+							<button class="btn waves-effect waves-light teal darken-3"
+	       type="submit" name="action">
+								Salvar <i class="material-icons right">save</i>
+							</button>
+						</div>
+					</form>
+				</div>
+			</div>
+			<div class="row container">
 				<div class="col s12 m6 l3">
 					<div class="card sticky-action" style="overflow: visible;">
 						<div class="card-image waves-effect waves-block waves-light">
@@ -94,19 +93,19 @@ xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 							<span>Tipo: Via subcutânea</span><br>
 						</div>
 					</div>
-	</div>
+				</div>
 
-	<script type="text/javascript"
-	src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-	<script
-	src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
-	<script type="text/javascript">
-		$(document).ready(function() {
-			$(".button-collapse").sideNav();
-		})
-	</script>
+				<script type="text/javascript"
+	    src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+				<script
+     src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+				<script type="text/javascript">
+					$(document).ready(function() {
+						$(".button-collapse").sideNav();
+					})
+				</script>
 
-</body>
+	</body>
 
 
 </html>
