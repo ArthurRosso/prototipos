@@ -71,28 +71,30 @@ xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 			</form>
 		</div>
 	</div>
-	<table class="container">
-		<thead>
-			<tr>
-				<th>Nome</th>
-				<th>Descrição</th>
-				<th>Validade</th>
-				<th>Tipo</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr th:each="medicine : ${medicines}">
-				<td><span th:text="${medicine.name}"></span><a href="remedio - Ourovac® Aftosa.html">Ourovac® Aftosa</a></td>
-				<td><span th:text="${medicine.description}"></span>Vacina contra a febre Aftosa</td>
-				<td><span class="dd/MM/yyyy" th:text="${medicine.expiration}"></span>31/12/2019</td>
-				<td><span th:text="${medicine.type}"></span>Via subcutânea</td>
-				<td><a class="waves-effect waves-light btn-small"
-										th:href="${(#mvc.url('AC#deletarRemedio').arg(0, remedio.cod)).build()}"><i
-										class="material-icons left">delete</i></a></td>
-			</tr>
-		</tbody>
+	<div class="row container">
+				<div class="col s12 m6 l3">
+					<div class="card sticky-action" style="overflow: visible;">
+						<div class="card-image waves-effect waves-block waves-light">
+							<img class="activator" src="http://ourofinosaudeanimal.com/media/uploads/produtos/2018/Ourovac_Aftosa_50ml_OF45.png" style="width:100px">
+						</div>
+						<div class="card-content">
+							<span class="card-title activator grey-text text-darken-4">Ourovac® Aftosa<i class="material-icons right">more_vert</i></span>
 
-	</table>
+							<p><a href="remedio - Ourovac® Aftosa.html">Show Ourovac® Aftosa</a></p>
+						</div>
+
+						<div class="card-action">
+							<a href=""><i class="material-icons left">delete</i></a></a>
+						</div>
+
+						<div class="card-reveal" style="display: none; transform: translateY(0px);">
+							<span class="card-title grey-text text-darken-4">Ourovac® Aftosa<i class="material-icons right">close</i></span>
+							<span>Descrição: Vacina contra a febre Aftosa.</span><br>
+							<span>Validade: 31/12/2019</span><br>
+							<span>Tipo: Via subcutânea</span><br>
+						</div>
+					</div>
+	</div>
 
 	<script type="text/javascript"
 	src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
