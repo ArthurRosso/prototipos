@@ -1,101 +1,30 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html>
-	<head>
-		<title>Sisboi - Relatórios</title>
+<head>  
+</head>
+<body>
+	<canvas id="myChart"></canvas>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+	<script>
+	var ctx = document.getElementById('myChart').getContext('2d');
+	var chart = new Chart(ctx, {
+    	// The type of chart we want to create
+    	type: 'line',
 
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    	// The data for our dataset
+    	data: {
+    	    labels: ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"],
+    	    datasets: [{
+    	        label: "Peso total do josé",
+    	        backgroundColor: 'rgb(255, 99, 132)',
+    	        borderColor: 'rgb(255, 99, 132)',
+    	        data: [0, 0, 0, 799, 800, 801, 0, 0, 0, 0, 0, 0],
+    	    }]
+    	},
 
-		<!--Import Google Icon Font-->
-		<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-	rel="stylesheet" />
-
-
-		<!--Import materialize.css-->
-		<link rel="stylesheet"
-	href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css" />
-
-
-	</head>
-	<body>
-
-		<header>
-
-			<nav class="teal darken-4">
-				<div class="nav-wrapper">
-					<a href="index.html" class="brand-logo">Sisboi</a> <a href="index.html"
-							   data-activates="mobile-demo" class="button-collapse"><i
-				       class="material-icons">menu</i></a>
-					<ul class="right hide-on-med-and-down">
-						<li><a href="animal.html">Animal</a></li>
-						<li><a href="medicine.html">Medicine</a></li>
-						<li><a href="medication.html">Medication</a></li>
-						<li><a href="login.html">Sair</a></li>
-					</ul>
-					<ul class="side-nav" id="mobile-demo">
-						<li><a href="animal.html">Animal</a></li>
-						<li><a href="medicine.html">Medicine</a></li>
-						<li><a href="medication.html">Medication</a></li>
-						<li><a href="login.html">Logout</a></li>
-					</ul>
-				</div>
-			</nav>
-
-		</header>
-
-		<div class="container">
-			<canvas id="myChart" width="400" height="400"></canvas>
-		</div>
-
-		<script>
-			var ctx = document.getElementById("myChart");
-			var myChart = new Chart(ctx, {
-				type: 'bar',
-				data: {
-				labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
-				datasets: [{
-				label: '# of Votes',
-				data: [12, 19, 3, 5, 2, 3],
-				backgroundColor: [
-					'rgba(255, 99, 132, 0.2)',
-					'rgba(54, 162, 235, 0.2)',
-					'rgba(255, 206, 86, 0.2)',
-					'rgba(75, 192, 192, 0.2)',
-					'rgba(153, 102, 255, 0.2)',
-					'rgba(255, 159, 64, 0.2)'
-				],
-				borderColor: [
-					'rgba(255,99,132,1)',
-					'rgba(54, 162, 235, 1)',
-					'rgba(255, 206, 86, 1)',
-					'rgba(75, 192, 192, 1)',
-					'rgba(153, 102, 255, 1)',
-					'rgba(255, 159, 64, 1)'
-				],
-				borderWidth: 1
-				}]
-			},
-			options: {
-				scales: {
-					yAxes: [{
-						ticks: {
-								beginAtZero:true
-							}
-						}]
-					}
-				}
-			});
-		</script>
-
-		<script type="text/javascript" src="Charts.js"></script>
-		<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
-
-
-		<script type="text/javascript">
-		</script>
-
-	</body>
-
-
+    	// Configuration options go here
+    	options: {}
+	});
+</script>
+</body>
 </html>
