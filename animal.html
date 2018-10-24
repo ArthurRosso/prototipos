@@ -1,185 +1,214 @@
 <!DOCTYPE html>
 <html>
-	<head>
+<head>
 
-		<title>Sisboi - Animal</title>
+	<title>Sisboi - Animal</title>
 
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-		<!--Import Google Icon Font-->
-		<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+	<!--Import Google Icon Font-->
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
 	rel="stylesheet" />
 
-		<!--Import materialize.css-->
-		<link rel="stylesheet"
+	<!--Import materialize.css-->
+	<link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css" />
 
-	</head>
+</head>
 
-	<body>
+<body>
 
-		<header>
+	<header>
 
-			<nav class="teal darken-4">
-				<div class="nav-wrapper">
-					<a href="index.html" class="brand-logo">Sisboi</a> <a href="index.html"
-							   data-activates="mobile-demo" class="button-collapse"><i
-				       class="material-icons">menu</i></a>
-					<ul class="right hide-on-med-and-down">
-						<li><a href="animal.html">Animal</a></li>
-						<li><a href="medicine.html">Medicine</a></li>
-						<li><a href="medication.html">Medication</a></li>
-						<li><a href="login.html">Sair</a></li>
-					</ul>
-					<ul class="side-nav" id="mobile-demo">
-						<li><a href="animal.html">Animal</a></li>
-						<li><a href="medicine.html">Medicine</a></li>
-						<li><a href="medication.html">Medication</a></li>
-						<li><a href="login.html">Logout</a></li>
-					</ul>
-				</div>
-			</nav>
+		<nav class="teal darken-4">
+			<div class="nav-wrapper">
+				<a href="index.html" class="brand-logo">Sisboi</a> <a href="index.html"
+				data-activates="mobile-demo" class="button-collapse"><i
+				class="material-icons">menu</i></a>
+				<ul class="right hide-on-med-and-down">
+					<li><a href="animal.html">Animal</a></li>
+					<li><a href="medicine.html">Medicine</a></li>
+					<li><a href="medication.html">Medication</a></li>
+					<li><a href="login.html">Sair</a></li>
+				</ul>
+				<ul class="side-nav" id="mobile-demo">
+					<li><a href="animal.html">Animal</a></li>
+					<li><a href="medicine.html">Medicine</a></li>
+					<li><a href="medication.html">Medication</a></li>
+					<li><a href="login.html">Logout</a></li>
+				</ul>
+			</div>
+		</nav>
 
-		</header>
+	</header>
 
-		<div class="row">
-			<div class="container">
-				<div class="card-panel">
-					<form method="post">
-						<div class="row">
-							<div class="input-field col s3">
-								Identificador: <input type="text" name="id" />
-							</div>
-							<div class="input-field col s3">
-								Nascimento: <input type="date" name="date" />
-							</div>
+	<div class="row">
+		<div class="container">
+			<div class="card-panel">
+				<form method="post">
+					<div class="row">
+						<div class="input-field col s6">
+							Identificador: <input type="text" name="id" />
+						</div>
+						<div class="input-field col s6">
+							Nascimento: <input type="date" name="date" />
+						</div>
 
-<div class="input-field col s3">
-								Peso: <input type="text" name="weight" />
-							</div>
-							<div class="input-field col s3">
-								Tipo: <input type="text" name="type" />
-							</div>
-							<div class="input-field col s3">
-								Raça: <input type="text" name="breed" />
-							</div>
-							<div class="input-field col s3">
-								Finalidade: <input type="text" name="purpose" />
-							</div>
-							<div class="input-field col s6">
-								<div class="file-field input-field">
-									<div class="btn teal darken-3">
-										<span>Fotos</span>
-										<input type="file" multiple>
-									</div>
-									<div class="file-path-wrapper">
-										<input class="file-path validate" type="text" placeholder="Uma ou mais fotos.">
-									</div>
+						<div class="input-field col s6">
+							Peso: <input type="text" name="weight" />
+						</div>
+						<div class="input-field col s6">
+							Tipo: 
+							<select name="Type">
+								{{ #types }}
+								<option value="{{ID}}">{{Type}}</option>
+								{{ /types }}
+							</select>
+						</div>
+						<div class="input-field col s6">
+							Raça: 
+							<select name="Breed">
+								{{ #breeds }}
+								<option value="{{ID}}">{{Breed}}</option>
+								{{ /breeds }}
+							</select>
+						</div>
+						<div class="input-field col s6">
+							Finalidade: 
+							<select multiple name="Purpose">
+								{{ #purposes }}
+								<option value="{{ID}}">{{Purpose}}</option>
+								{{ /purposes }}
+							</select>
+						</div>
+						<div class="input-field col s6">
+							Mãe: 
+							<select name="Mother">
+								<option value="0">Sem mãe</option>
+								<option value="{{ID}}">{{Name}}</option>
+							</select>
+						</div>
+						<div class="input-field col s6">
+							Pai: 
+							<select name="Father">
+								<option value="0">Sem pai</option>
+								<option value="{{ID}}">{{Name}}</option>
+							</select>
+						</div>
+						<div class="input-field col s12">
+							<div class="file-field input-field">
+								<div class="btn teal darken-3">
+									<span>Fotos</span>
+									<input type="file" multiple>
+								</div>
+								<div class="file-path-wrapper">
+									<input class="file-path validate" type="text" placeholder="Uma ou mais fotos.">
 								</div>
 							</div>
 						</div>
-						<div class="right-align">
-							<button class="btn waves-effect waves-light teal darken-3"
-	       type="submit" name="action">
-								Salvar <i class="material-icons right">save</i>
-							</button>
-						</div>
-					</form>
+					</div>
+					<div class="right-align">
+						<button class="btn waves-effect waves-light teal darken-3"
+						type="submit" name="action">
+						Salvar <i class="material-icons right">save</i>
+					</button>
+				</div>
+			</form>
+		</div>
+	</div>
+
+	<div class="row container">
+		<div class="col s12 m6 l3">
+			<div class="card sticky-action" style="overflow: visible;">
+				<div class="card-image waves-effect waves-block waves-light">
+					<img class="activator" src="http://ruralpecuaria.com.br/painel/img/noticias/533/noticias_1406497986.jpg" style="width:100px">
+				</div>
+				<div class="card-content">
+					<span class="card-title activator grey-text text-darken-4">José<i class="material-icons right">more_vert</i></span>
+
+					<p><a href="animal-José.html">Show José</a></p>
+				</div>
+
+				<div class="card-action">
+					<a href=""><i class="material-icons left">delete</i></a></a>
+				</div>
+
+				<div class="card-reveal" style="display: none; transform: translateY(0px);">
+					<span class="card-title grey-text text-darken-4">José<i class="material-icons right">close</i></span>
+					<span>Nascimento: 23/07/2015 </span><br>
+					<span>Peso: 800kg</span><br>
+					<span>Tipo: Touro</span><br>
+					<span>Raça: Angus</span><br>
+					<span>Propósito: Genética</span><br>
 				</div>
 			</div>
-
-			<div class="row container">
-				<div class="col s12 m6 l3">
-					<div class="card sticky-action" style="overflow: visible;">
-						<div class="card-image waves-effect waves-block waves-light">
-							<img class="activator" src="http://ruralpecuaria.com.br/painel/img/noticias/533/noticias_1406497986.jpg" style="width:100px">
-						</div>
-						<div class="card-content">
-							<span class="card-title activator grey-text text-darken-4">José<i class="material-icons right">more_vert</i></span>
-
-							<p><a href="animal-José.html">Show José</a></p>
-						</div>
-
-						<div class="card-action">
-							<a href=""><i class="material-icons left">delete</i></a></a>
-						</div>
-
-						<div class="card-reveal" style="display: none; transform: translateY(0px);">
-							<span class="card-title grey-text text-darken-4">José<i class="material-icons right">close</i></span>
-							<span>Nascimento: 23/07/2015 </span><br>
-							<span>Peso: 800kg</span><br>
-							<span>Tipo: Touro</span><br>
-							<span>Raça: Angus</span><br>
-							<span>Propósito: Genética</span><br>
-						</div>
-					</div>
+		</div>
+		<div class="col s12 m6 l3">
+			<div class="card sticky-action" style="overflow: visible;">
+				<div class="card-image waves-effect waves-block waves-light">
+					<img class="activator" src="http://iepec.com/wp-content/uploads/2015/03/Touro-Angus-a-Campo-679x570.jpg" style="width:85px">
 				</div>
-				<div class="col s12 m6 l3">
-					<div class="card sticky-action" style="overflow: visible;">
-						<div class="card-image waves-effect waves-block waves-light">
-							<img class="activator" src="http://iepec.com/wp-content/uploads/2015/03/Touro-Angus-a-Campo-679x570.jpg" style="width:85px">
-						</div>
-						<div class="card-content">
-							<span class="card-title activator grey-text text-darken-4">Maria<i class="material-icons right">more_vert</i></span>
+				<div class="card-content">
+					<span class="card-title activator grey-text text-darken-4">Maria<i class="material-icons right">more_vert</i></span>
 
-							<p><a href="animal-Maria.html">Show Maria</a></p>
-						</div>
-
-						<div class="card-action">
-							<a href=""><i class="material-icons left">delete</i></a></a>
-						</div>
-
-						<div class="card-reveal" style="display: none; transform: translateY(0px);">
-							<span class="card-title grey-text text-darken-4">Maria<i class="material-icons right">close</i></span>
-							<span>Nascimento: 01/02/2016 </span><br>
-							<span>Peso: 750kg</span><br>
-							<span>Tipo: Vaca</span><br>
-							<span>Raça: Angus</span><br>
-							<span>Propósito: Leite</span><br>
-						</div>
-					</div>
+					<p><a href="animal-Maria.html">Show Maria</a></p>
 				</div>
-				<div class="col s12 m6 l3">
-					<div class="card sticky-action" style="overflow: visible;">
-						<div class="card-image waves-effect waves-block waves-light">
-							<img class="activator" src="http://www.agromafra.com.br/images/fotos/angus%20vendas/grandes/21.jpg" style="width:100px">
-						</div>
-						<div class="card-content">
-							<span class="card-title activator grey-text text-darken-4">João<i class="material-icons right">more_vert</i></span>
 
-							<p><a href="animal-João.html">Show João</a></p>
-						</div>
+				<div class="card-action">
+					<a href=""><i class="material-icons left">delete</i></a></a>
+				</div>
 
-						<div class="card-action">
-							<a href=""><i class="material-icons left">delete</i></a></a>
-						</div>
-
-						<div class="card-reveal" style="display: none; transform: translateY(0px);">
-							<span class="card-title grey-text text-darken-4">João<i class="material-icons right">close</i></span>
-							<span>Nascimento: 22/01/2018 </span><br>
-							<span>Peso: 400kg</span><br>
-							<span>Tipo: Boi</span><br>
-							<span>Raça: Angus</span><br>
-							<span>Propósito: Engorda</span><br>
-						</div>
-					</div>
+				<div class="card-reveal" style="display: none; transform: translateY(0px);">
+					<span class="card-title grey-text text-darken-4">Maria<i class="material-icons right">close</i></span>
+					<span>Nascimento: 01/02/2016 </span><br>
+					<span>Peso: 750kg</span><br>
+					<span>Tipo: Vaca</span><br>
+					<span>Raça: Angus</span><br>
+					<span>Propósito: Leite</span><br>
 				</div>
 			</div>
+		</div>
+		<div class="col s12 m6 l3">
+			<div class="card sticky-action" style="overflow: visible;">
+				<div class="card-image waves-effect waves-block waves-light">
+					<img class="activator" src="http://www.agromafra.com.br/images/fotos/angus%20vendas/grandes/21.jpg" style="width:100px">
+				</div>
+				<div class="card-content">
+					<span class="card-title activator grey-text text-darken-4">João<i class="material-icons right">more_vert</i></span>
+
+					<p><a href="animal-João.html">Show João</a></p>
+				</div>
+
+				<div class="card-action">
+					<a href=""><i class="material-icons left">delete</i></a></a>
+				</div>
+
+				<div class="card-reveal" style="display: none; transform: translateY(0px);">
+					<span class="card-title grey-text text-darken-4">João<i class="material-icons right">close</i></span>
+					<span>Nascimento: 22/01/2018 </span><br>
+					<span>Peso: 400kg</span><br>
+					<span>Tipo: Boi</span><br>
+					<span>Raça: Angus</span><br>
+					<span>Propósito: Engorda</span><br>
+				</div>
+			</div>
+		</div>
+	</div>
 
 
 
-			<script type="text/javascript"
-	   src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-			<script
-    src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
-			<script type="text/javascript">
-				$(document).ready(function() {
-					$(".button-collapse").sideNav();
-				})
-			</script>
+	<script type="text/javascript"
+	src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+	<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$(".button-collapse").sideNav();
+		})
+	</script>
 
-	</body>
+</body>
 
 
 </html>
